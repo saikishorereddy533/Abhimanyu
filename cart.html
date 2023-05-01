@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customizable, Sustainable shopping center</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo-2.jpg"
+      type="image/svg+xml"
+    />
+
+    <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+  integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+  integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+  crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/cart.css" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <div class="header-search">
+          <input
+            type="search"
+            name="search"
+            placeholder="Search Product..."
+            class="input-field"
+          />
+
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+
+        <a href="/index.html" class="logo">
+          <img
+            src="./assets/images/logo-2.png"
+            alt="Aadharam logo"
+            width="130"
+            height="31"
+          />
+        </a>
+
+        <div class="header-actions">
+          <button class="header-action-btn" onclick="window.location.href='index.html'">
+            <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
+  
+            <p class="header-action-label">Home</p>
+          </button>
+
+          <button class="header-action-btn">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Search</p>
+          </button>
+
+          <button class="header-action-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Cart</p>
+
+            <div class="btn-badge green" aria-hidden="true">3</div>
+          </button>
+
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+            <p class="header-action-label">Wishlisht</p>
+
+            <div class="btn-badge" aria-hidden="true">2</div>
+          </button>
+        </div>
+
+        <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo">
+              <img
+                src="./assets/images/logo-2.png"
+                alt="Aadharam logo"
+                width="130"
+                height="31"
+              />
+            </a>
+
+            <button
+              class="nav-close-btn"
+              data-nav-close-btn
+              aria-label="Close Menu"
+            >
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li>
+              <a href="index.html" class="navbar-link">Home</a>
+            </li>
+
+            <li>
+              <a href="/shop.html" class="navbar-link">Shop</a>
+            </li>
+
+            <li>
+              <a href="/customize.html" class="navbar-link">Customize</a>
+            </li>
+
+            <li>
+                <a href="/cart.html" class="navbar-link">Check Out</a>
+            </li>
+
+            <li>
+              <a href="about-us.html" class="navbar-link">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 col-11 mx-auto">
+                    <div class="row mt-5 gx-3">
+                        <!-- left side div -->
+                        <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                            <div class="card p-4">
+                                <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                                <div class="row">
+                                    <!-- cart images div -->
+                                    <div
+                                        class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                        <img src="assets/images/product-1.jpg" class="img-fluid" alt="cart img">
+                                    </div>
+    
+    
+    
+    
+                                    <!-- cart product details -->
+                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                        <div class="row">
+                                            <!-- product name  -->
+                                            <div class="col-6 card-title">
+                                                <h1 class="mb-4 product_name">Blue Zara Shirt</h1>
+                                                <p class="mb-2">SHIRT - BLUE</p>
+                                                <p class="mb-2">COLOR: BLUE</p>
+                                                <p class="mb-3">SIZE: M</p>
+                                            </div>
+                                            <!-- quantity inc dec -->
+                                            <div class="col-6">
+                                                <ul class="pagination justify-content-end set_quantity">
+                                                    <li class="page-item">
+                                                        <button class="page-link "
+                                                            onclick="decreaseNumber('textbox','itemval')">
+                                                            <i class="fas fa-minus"></i> </button>
+                                                    </li>
+                                                    <li class="page-item"><input type="text" name="" class="page-link"
+                                                            value="0" id="textbox">
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <button class="page-link"
+                                                            onclick="increaseNumber('textbox','itemval')"> <i
+                                                                class="fas fa-plus"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- //remover move and price -->
+                                        <div class="row">
+                                            <div class="col-8 d-flex justify-content-between remove_wish">
+                                                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end price_money">
+                                                <h3><span id="itemval">0.00 </span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <!-- 2nd cart product -->
+                            <div class="card p-4">
+                                <div class="row">
+                                    <!-- cart images div -->
+                                    <div
+                                        class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                        <img src="assets/images/product-4.jpg" class="img-fluid" alt="cart img">
+                                    </div>
+    
+    
+    
+    
+                                    <!-- cart product details -->
+                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                        <div class="row">
+                                            <!-- product name  -->
+                                            <div class="col-6 card-title">
+                                                <h1 class="mb-4 product_name">Green Zara Shirt</h1>
+                                                <p class="mb-2">SHIRT - Green</p>
+                                                <p class="mb-2">COLOR: Green</p>
+                                                <p class="mb-3">SIZE: M</p>
+                                            </div>
+                                            <!-- quantity inc dec -->
+                                            <div class="col-6">
+                                                <ul class="pagination justify-content-end set_quantity">
+                                                    <li class="page-item">
+                                                        <button class="page-link "
+                                                            onclick="decreaseNumber('textbox1','itemval1')"> <i
+                                                                class="fas fa-minus"></i> </button>
+                                                    </li>
+                                                    <li class="page-item"><input type="text" name="" class="page-link"
+                                                            value="0" id="textbox1">
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <button class="page-link"
+                                                            onclick="increaseNumber('textbox1','itemval1')"> <i
+                                                                class="fas fa-plus"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- //remover move and price -->
+                                        <div class="row">
+                                            <div class="col-8 d-flex justify-content-between remove_wish">
+                                                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end price_money">
+                                                <h3><span id="itemval1">0.00 </span> </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- right side div -->
+                        <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                            <div class="right_side p-3 shadow bg-white">
+                                <h2 class="product_name mb-5">The Total Amount Of</h2>
+                                <div class="price_indiv d-flex justify-content-between">
+                                    <p>Product amount</p>
+                                    <p><span id="product_total_amt">0.00</span></p>
+                                </div>
+                                <div class="price_indiv d-flex justify-content-between">
+                                    <p>Shipping Charge</p>
+                                    <p><span id="shipping_charge">50.0</span></p>
+                                </div>
+                                <hr />
+                                <div class="total-amt d-flex justify-content-between font-weight-bold">
+                                    <p>The total amount of (including VAT)</p>
+                                    <p><span id="total_cart_amt">0.00</span></p>
+                                </div>
+                                <button class="btn btn-primary text-uppercase">Checkout</button>
+                            </div>
+                            <!-- discount code part -->
+                            <div class="discount_code mt-3 shadow">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <a class="d-flex justify-content-between" data-toggle="collapse"
+                                            href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            Add a discount code (optional)
+                                            <span><i class="fas fa-chevron-down pt-1"></i></span>
+                                        </a>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="mt-3">
+                                                <input type="text" name="" id="discount_code1"
+                                                    class="form-control font-weight-bold"
+                                                    placeholder="Enter the discount code">
+                                            </div>
+                                            <button class="btn btn-primary btn-sm mt-3"
+                                                onclick="discount_code()">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+    
+                            <!-- discount code ends -->
+                            <div class="mt-3 shadow p-3 bg-white">
+                                <div class="pt-4">
+                                    <h5 class="mb-4">Expected delivery date</h5>
+                                    <p>July 27th 2020 - July 29th 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="./assets/images/logo-2.png" alt="Aadharam logo" />
+            </a>
+
+            <p class="footer-text">
+              Aadharam is a fashion theme for presents a complete wardrobe of
+              uniquely crafted Ethnic Wear, Casuals, Edgy Denims, & Accessories
+              inspired from the most contemporary
+            </p>
+
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Information</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About Company</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Payment Type</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Awards Winning</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">World Media Partner</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Become an Agent</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Refund Policy</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Category</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Handbags & Wallets</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Women's Clothing</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Plus Sizes</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Complete Your Look</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Baby Corner</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Man & Woman Shoe</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Help & Support</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Dealers & Agents</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ Information</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Return Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Shipping & Delivery</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order Tranking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">List of Shops</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2022 <a href="#">Aadharam</a>. All Rights Reserved
+          </p>
+
+          <ul class="footer-bottom-list">
+            <li>
+              <a href="#" class="footer-bottom-link">Privacy Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-bottom-link">Sitemap</a>
+            </li>
+          </ul>
+
+          <div class="payment">
+            <p class="payment-title">We Support</p>
+
+            <img
+              src="./assets/images/payment-img.png"
+              alt="Online payment logos"
+              class="payment-img"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+    var product_total_amt = document.getElementById('product_total_amt');
+    var shipping_charge = document.getElementById('shipping_charge');
+    var total_cart_amt = document.getElementById('total_cart_amt');
+    var discountCode = document.getElementById('discount_code1');
+    const decreaseNumber = (incdec, itemprice) => {
+        var itemval = document.getElementById(incdec);
+        var itemprice = document.getElementById(itemprice);
+        console.log(itemprice.innerHTML);
+        // console.log(itemval.value);
+        if (itemval.value <= 0) {
+            itemval.value = 0;
+            alert('Negative quantity not allowed');
+        } else {
+            itemval.value = parseInt(itemval.value) - 1;
+            itemval.style.background = '#fff';
+            itemval.style.color = '#000';
+            itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
+            product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
+            total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+        }
+    }
+    const increaseNumber = (incdec, itemprice) => {
+        var itemval = document.getElementById(incdec);
+        var itemprice = document.getElementById(itemprice);
+        // console.log(itemval.value);
+        if (itemval.value >= 5) {
+            itemval.value = 5;
+            alert('max 5 allowed');
+            itemval.style.background = 'red';
+            itemval.style.color = '#fff';
+        } else {
+            itemval.value = parseInt(itemval.value) + 1;
+            itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
+            product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
+            total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+        }
+    }
+    const discount_code = () => {
+        let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+        let error_trw = document.getElementById('error_trw');
+        if (discountCode.value === 'thapa') {
+            let newtotalamt = totalamtcurr - 15;
+            total_cart_amt.innerHTML = newtotalamt;
+            error_trw.innerHTML = "Hurray! code is valid";
+        } else {
+            error_trw.innerHTML = "Try Again! Valid ";
+        }
+    }
+</script>
+    <script src="./assets/js/script.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
