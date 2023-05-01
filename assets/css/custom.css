@@ -80,3 +80,11 @@ ul {
 .design-preview:hover {
     border: 2px solid black;
 }
+
+
+@media (max-width:768px) {
+    .image_container{
+      margin-top: 20%;
+    }
+    
+  }
