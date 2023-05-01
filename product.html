@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadharam - Sustainable shopping center</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo-2.jpg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="style-prod.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Search Product..." class="input-field">
+
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo-2.png" alt="Aadharam logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Sign in</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Search</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Cart</p>
+
+          <div class="btn-badge green" aria-hidden="true">3</div>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Wishlisht</p>
+
+          <div class="btn-badge" aria-hidden="true">2</div>
+        </button>
+
+      </div>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-2.png" alt="Aadharam logo" width="130" height="31">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="/index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="/shop.html" class="navbar-link">Shop</a>
+          </li>
+          <li>
+            <a href="/customize.html" class="navbar-link">Customize</a>
+          </li>
+
+          <li>
+            <a href="/about-us.html" class="navbar-link">About Us</a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="s-product-imgs">
+        <div class="img-display">
+          <div class="img-showcase">
+            <img src="./assets/images/product-5.jpg" alt="shoe image">
+            <img src="./assets/images/tshirt-1.jpg" alt="shoe image">
+            <img src="./assets/images/tshirt-2.jpeg" alt="shoe image">
+            <img src="./assets/images/tshirt-3.jpg" alt="shoe image">
+          </div>
+        </div>
+        <div class="img-select">
+          <div class="img-item">
+            <a href="#" data-id="1">
+              <img src="./assets/images/product-5.jpg" alt="tshirt image">
+            </a>
+          </div>
+          <div class="img-item">
+            <a href="#" data-id="2">
+              <img src="./assets/images/tshirt-1.jpg" alt="tshirtimage">
+            </a>
+          </div>
+          <div class="img-item">
+            <a href="#" data-id="3">
+              <img src="./assets/images/tshirt-1.jpg" alt="tshirt image">
+            </a>
+          </div>
+          <div class="img-item">
+            <a href="#" data-id="4">
+              <img src="./assets/images/product-5.jpg" alt="tshirt image">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="s-product-content">
+        <h2 class="s-product-title">Check Shirt</h2>
+        <a href="#" class="product-link">visit store</a>
+        <div class="s-product-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>4.7(21)</span>
+        </div>
+
+        <div class="s-product-price">
+          <p class="last-price">Old Price: <span>₹257.00</span></p>
+          <p class="new-price">New Price: <span>₹249.00 (5%)</span></p>
+        </div>
+
+        <div class="s-product-detail">
+          <h2>about this item: </h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur
+            placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos,
+            labore suscipit. Unde.</p>
+          <ul>
+            <li>Color: <span>Black</span></li>
+            <li>Available: <span>in stock</span></li>
+            <li>Category: <span>Shoes</span></li>
+            <li>Shipping Area: <span>All over the world</span></li>
+            <li>Shipping Fee: <span>Free</span></li>
+          </ul>
+        </div>
+
+        <div class="s-purchase-info">
+          <select class="sizes">
+            <option>Select size</option>
+            <option>XL</option>
+            <option>L</option>
+            <option>M</option>
+            <option>S</option>
+          </select>
+          <!-- <input type="number" min="0" value="1"> -->
+          <div class="buttons">
+            <button class="add-to-bag"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+            <button class="add-to-wishlist"><i class="fas fa-heart"></i> Add to Wishlist</button>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <p>Share At: </p>
+          <a href="#" onclick="shareOnFacebook(); return false;" >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" onclick="shareOnTwitter(); return false;" >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" onclick="shareOnInstagram(); return false;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" onclick="shareOnWhatsApp(); return false;">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-2.png" alt="Aadharam logo">
+          </a>
+
+          <p class="footer-text">
+            Aadharam is a fashion theme for presents a complete wardrobe of uniquely crafted Ethnic Wear, Casuals, Edgy
+            Denims, &
+            Accessories inspired from the most contemporary
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Information</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Payment Type</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Awards Winning</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">World Media Partner</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Become an Agent</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Refund Policy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Category</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Handbags & Wallets</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Women's Clothing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Plus Sizes</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Complete Your Look</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Baby Corner</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Man & Woman Shoe</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help & Support</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Dealers & Agents</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ Information</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Return Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Shipping & Delivery</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Order Tranking</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">List of Shops</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">Aadharam</a>. All Rights Reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+        </ul>
+
+        <div class="payment">
+          <p class="payment-title">We Support</p>
+
+          <img src="./assets/images/payment-img.png" alt="Online payment logos" class="payment-img">
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+   <script>
+      // Function to share on Instagram
+  function shareOnInstagram() {
+    var url = encodeURIComponent(window.location.href);
+    var shareUrl = 'instagram://library?AssetPath=' + url;
+    window.open(shareUrl, '_blank');
+  }
+
+   // Function to generate WhatsApp share link
+   function shareOnWhatsApp() {
+    var url = encodeURIComponent(window.location.href);
+    var shareUrl = 'https://wa.me/?text=' + url;
+    window.open(shareUrl, '_blank');
+  }
+
+   // Function to generate Facebook share link
+   function shareOnFacebook() {
+    var url = encodeURIComponent(window.location.href);
+    var shareUrl = 'https://www.facebook.com/sharer.php?u=' + url;
+    window.open(shareUrl, '_blank');
+  }
+
+  // Function to generate Twitter share link
+  function shareOnTwitter() {
+    var url = encodeURIComponent(window.location.href);
+    var shareUrl = 'https://twitter.com/intent/tweet?url=' + url;
+    window.open(shareUrl, '_blank');
+  }
+
+   </script>
+
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

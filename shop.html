@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadharam - Sustainable shopping center</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo-2.jpg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style-filter.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <!-- Include Typeahead.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typeahead.js/dist/typeahead.bundle.min.js"></script>
+  
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <div class="header-search">
+        <input type="search" name="search" id="search-input" placeholder="Search Product..." class="input-field">
+
+        <button class="search-btn" id="search-button" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+        <ul id="suggestions"></ul>
+      </div>
+      
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo-2.png" alt="Aadharam logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+
+        <button class="header-action-btn" onclick="window.location.href='index.html'">
+          <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Home</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Search</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Cart</p>
+
+          <div class="btn-badge green" aria-hidden="true">3</div>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Wishlisht</p>
+
+          <div class="btn-badge" aria-hidden="true">2</div>
+        </button>
+
+      </div>
+     
+      <div class="filter-sort">
+        <button id = "filtering">Filter</button>
+        <button id = "sorting">Sort</button>
+      </div>
+      
+      <!--For Filter-->
+      <!-- <div id="modal-overlay"></div> -->
+      <!-- <div id="myModal" class="modal">
+        <div class="modalContent">
+          <span class="close">&times;</span>
+          <div class="filter" id="filterid">
+            <h2>Filters</h2>
+            <div class="filter">
+              <h3>Gender</h3>
+              <select id="gender">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Size</h3>
+              <select id="size">
+                <option value="all">All</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Brand</h3>
+              <select id="brand">
+                <option value="all">All</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="puma">Puma</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Color</h3>
+              <select id="color">
+                <option value="all">All</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Design</h3>
+              <select id="design">
+                <option value="all">All</option>
+                <option value="plain">Plain</option>
+                <option value="striped">Striped</option>
+                <option value="checkered">Checkered</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Type</h3>
+              <select id="type">
+                <option value="all">All</option>
+                <option value="tshirt">T-shirt</option>
+                <option value="shirt">Shirt</option>
+                <option value="jeans">Jeans</option>
+                <option value="trousers">Trousers</option>
+              </select>
+            </div>
+            <div class="filter">
+              <h3>Sort by Price</h3>
+              <select id="price-sort">
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+     <!--For Sort-->
+     <div id="sort-modal-overlay"></div>
+      <div id="sort-myModal" class="modal">
+        <div class="sort-modalContent">
+          <span class="sort-close">&times;</span>
+          <div class="filter" id="filterid">
+          <div class="filter">
+            <h3>Sort by Price</h3>
+            <select id="price-sort">
+              <option value="popularity" selected>Popularity</option>
+              <option value="latest">Latest</option>
+              <option value="low-to-high">Low to High</option>
+              <option value="high-to-low">High to Low</option>
+            </select>
+          </div>
+        </div>
+
+     </div>
+      </div>
+
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo-2.png" alt="Aadharam logo" width="130" height="31">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="/index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="/shop.html" class="navbar-link">Shop</a>
+          </li>
+
+          <li>
+            <a href="/customize.html" class="navbar-link">Customize</a>
+          </li>
+
+          <li>
+            <a href="/about-us.html" class="navbar-link">About Us</a>
+          </li>
+          
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+ 
+  
+
+  <div class="f-container">
+    <div id="myModal"></div>
+    <div class="filters" id="filters-container">
+      <span class="close">&times;</span>
+      <h2>Filters</h2>
+      <div class="filter">
+        <h3>Gender</h3>
+        <select id="gender">
+          <option value="all">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Size</h3>
+        <select id="size">
+          <option value="all">All</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Brand</h3>
+        <select id="brand">
+          <option value="all">All</option>
+          <option value="nike">Nike</option>
+          <option value="adidas">Adidas</option>
+          <option value="puma">Puma</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Color</h3>
+        <select id="color">
+          <option value="all">All</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Design</h3>
+        <select id="design">
+          <option value="all">All</option>
+          <option value="plain">Plain</option>
+          <option value="striped">Striped</option>
+          <option value="checkered">Checkered</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Type</h3>
+        <select id="type">
+          <option value="all">All</option>
+          <option value="tshirt">T-shirt</option>
+          <option value="shirt">Shirt</option>
+          <option value="jeans">Jeans</option>
+          <option value="trousers">Trousers</option>
+        </select>
+      </div>
+      <div class="filter">
+        <h3>Sort by Price</h3>
+        <select id="price-sort">
+          <option value="low-to-high">Low to High</option>
+          <option value="high-to-low">High to Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="f-products">
+      <h2>Products</h2>
+      <div class="f-product" data-gender="male" data-size="m" data-color="red" data-brand="nike" data-type="shirt" data-design="checkered" data-price="50" >
+        <img src="./assets/images/tshirt-1.jpg" alt="Product 1" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Barsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="490">490</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Karsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="480">₹ 480</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-1.jpg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Rossi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="475">₹ 475</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Jorey Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="485">₹ 485</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Larsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="489">₹ 489</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="m" data-color="red" data-brand="nike" data-type="shirt" data-design="checkered" data-price="50" >
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 1" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Barsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="490">490</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-1.jpg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Karsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="480">₹ 480</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Rossi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="475">₹ 475</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Jorey Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="485">₹ 485</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-3.jpg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Larsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="489">₹ 489</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="m" data-color="red" data-brand="nike" data-type="shirt" data-design="checkered" data-price="50" >
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 1" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Barsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="490">490</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-1.jpg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Karsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="480">₹ 480</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Rossi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="475">₹ 475</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-3.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-2.jpeg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Jorey Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="485">₹ 485</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+      <div class="f-product" data-gender="male" data-size="s" data-color="red" data-brand="adidas" data-type="shirt" data-design="checkered" data-price="40">
+        <img src="./assets/images/tshirt-3.jpg" alt="Product 2" >
+        <h3 class="h4 card-title">
+          <a href="/customize.html">Larsi Tshirt</a>
+        </h3>
+        <div class="card-price">
+          <data value="489">₹ 489</data>
+        </div>
+        <div class="card-hover-image">
+          <img src="./assets/images/tshirt-1.jpg" alt="Varsi Leather Bag" loading="lazy" width="800" height="1034" class="w-100">
+        </div>
+      </div>
+ 
+    </div>
+    
+</div>
+
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-2.png" alt="Aadharam logo">
+          </a>
+
+          <p class="footer-text">
+            Aadharam is a fashion theme for presents a complete wardrobe of uniquely crafted Ethnic Wear, Casuals, Edgy
+            Denims, &
+            Accessories inspired from the most contemporary
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Information</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Payment Type</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Awards Winning</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">World Media Partner</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Become an Agent</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Refund Policy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Category</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Handbags & Wallets</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Women's Clothing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Plus Sizes</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Complete Your Look</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Baby Corner</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Man & Woman Shoe</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help & Support</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Dealers & Agents</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ Information</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Return Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Shipping & Delivery</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Order Tranking</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">List of Shops</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">Aadharam</a>. All Rights Reserved
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Sitemap</a>
+          </li>
+
+        </ul>
+
+        <div class="payment">
+          <p class="payment-title">We Support</p>
+
+          <img src="./assets/images/payment-img.png" alt="Online payment logos" class="payment-img">
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
