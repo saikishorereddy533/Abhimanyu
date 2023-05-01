@@ -336,7 +336,7 @@
   }
   
   .nav-close-btn { 
-    font-size: 400px;
+    font-size: 30px;
     position: absolute;
     right: 20px;
   }
@@ -398,12 +398,6 @@
   
   
   
-  
-  
-  /*-----------------------------------*\
-   * #SERVICE
-  \*-----------------------------------*/
-  
   .service { padding-block: 45px; }
   
   .service-list {
@@ -435,11 +429,11 @@
   
   
   
+
+ .nav-close-btn{
+  font-size: 25px;
+ }
   
-  
-  /*-----------------------------------*\
-   * #CATETORY
-  \*-----------------------------------*/
   
   .category { padding-top: 0; }
   
