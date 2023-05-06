@@ -1,39 +1,3 @@
-// Get all products
-// const products = document.querySelectorAll('.f-product');
-// /*search functionality using typehead */
-
-// function getProductNames() {
-//   const products = document.getElementsByClassName('f-product');
-//   const productNames = [];
-
-//   for (let i = 0; i < products.length; i++) {
-//     const productName = products[i].querySelector('h3').textContent;
-//     if (!productNames.includes(productName)) {
-//       productNames.push(productName);
-//     }
-//   }
-
-//   return productNames;
-// }
-
-// const searchInput = document.getElementById('search-input');
-// const productNames = getProductNames();
-
-// $(searchInput).typeahead({
-//   hint: true,
-//   highlight: true,
-//   minLength: 1
-// },
-// {
-//   name: 'product-names',
-//   source: function(query, callback) {
-//     const filteredProductNames = productNames.filter(function(name) {
-//       return name.toLowerCase().includes(query.toLowerCase());
-//     });
-//     callback(filteredProductNames);
-//   }
-// });
-
 const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-button');
 const suggestions = document.querySelector('#suggestions');
@@ -107,6 +71,8 @@ searchInput.addEventListener('input', () => {
   searchButtonClicked = false;
   searchProducts();
 });
+
+
 
 
 
@@ -302,3 +268,6 @@ function sortProducts() {
 //     modalContent.innerHTML = "";
 //   }
 // }
+
+
+

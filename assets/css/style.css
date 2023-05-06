@@ -108,6 +108,84 @@ body {
   padding-block: 70px;
 }
 
+.footer-brand img{
+  width: 200px;
+}
+
+
+.hero{
+  background-image: url('../images/hero-banner.jpg');
+}
+
+.black-theme {
+  --white: hsl(0, 0%, 0%);
+  /* other styles */
+}
+
+/* Styles specific to the dark theme */
+.theme-dark body {
+  background-color: #333;
+  color: #fff;
+}
+
+.theme-dark .nav-open-btn span{
+  background: #fff;
+}
+.theme-dark .search-btn{
+  color: #fff;
+}
+.theme-dark .header-actions{
+  background-color: #333;
+}
+.theme-dark .filter-btn{
+  color: #fff;
+}
+.theme-dark .hero{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/hero-banner.jpg);
+}
+/* Update other styles accordingly for the dark theme */
+.theme-dark .header{
+  background-color: #333;
+  color: #fff;
+}
+.theme-dark .header .header-action-btn{
+  color: #fff;
+}
+
+.theme-dark .navbar-list {
+  background-color: #333;
+  color: #fff;
+}
+.theme-dark .navbar-link {
+  color: #fff;
+}
+.theme-dark .footer-top{
+  background-color: #333;
+}
+.theme-dark h2{
+  color: #fff;
+}
+
+.theme-dark a{
+  color: #fff;
+}
+
+.theme-dark .footer-link{
+  color: #fff;
+}
+
+.theme-dark .footer-list-title{
+  color: #fff;
+}
+.theme-dark .footer-text{
+  color: #fff;
+}
+.theme-dark .footer {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Add more styles for different elements as needed */
 
 
 

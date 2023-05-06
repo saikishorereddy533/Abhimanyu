@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +11,7 @@
   -->
     <link
       rel="shortcut icon"
-      href="./assets/images/logo-2.jpg"
+      href="./assets/images/logo-2.png"
       type="image/svg+xml"
     />
 
@@ -138,6 +138,16 @@
             <li>
               <a href="about-us.html" class="navbar-link">About Us</a>
             </li>
+            <li style="
+            display: flex;
+            align-items: center;
+        ">
+              <a href="" class="navbar-link">Theme Switch</a>
+              <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle-btn" class="theme-toggle" />
+                <label for="theme-toggle" class="theme-label"></label>
+              </div> 
+            </li>           
           </ul>
         </nav>
       </div>
@@ -149,7 +159,6 @@
         <section
           class="hero"
           id="home"
-          style="background-image: url('./assets/images/hero-banner.jpg')"
         >
           <div class="container">
             <div class="hero-content">
@@ -181,7 +190,7 @@
 
             <ul class="filter-list">
               <li>
-                <button class="filter-btn active">Featured products</button>
+                <button class="filter-btn">Featured products</button>
               </li>
             </ul>
 
@@ -643,7 +652,42 @@
     - custom js link
   -->
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+  $(document).ready(function () {
+  // Function to toggle the theme
+  function toggleTheme() {
+    $('html').toggleClass('theme-light theme-dark');
+
+    // Get the logo image element
+    var logoImg = $('.logo img');
+
+    // Get the current logo image source
+    var currentSrc = logoImg.attr('src');
+    if (currentSrc.includes('logo-1')) {
+      // Replace "logo-1" with "logo-2" in the source
+      var newSrc = currentSrc.replace('logo-1', 'logo-2');
+
+      // Update the logo image source
+      logoImg.attr('src', newSrc);
+    } else if (currentSrc.includes('logo-2')) {
+      // Replace "logo-2" with "logo-1" in the source
+      var newSrc = currentSrc.replace('logo-2', 'logo-1');
+
+      // Update the logo image source
+      logoImg.attr('src', newSrc);
+    }
+  }
+
+  // Event listener for a theme toggle button
+  $('#theme-toggle-btn').click(function () {
+    console.log("clicked");
+    toggleTheme();
+  });
+});
+
+    </script>
     <!-- 
     - ionicon link
   -->
